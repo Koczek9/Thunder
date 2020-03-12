@@ -69,3 +69,6 @@ InstallCMakeConfig(
 InstallPackageConfig(
         TARGETS ${TARGET} 
         DESCRIPTION "communications channel abstraction to get a SecurityToken over a process boundary." )
+
+
+add_subdirectory(test_securityagent)

@@ -55,6 +55,7 @@ Core::ProxyType<IPC::SecurityAgent::TokenData> _tokenId(Core::ProxyType<IPC::Sec
  */
 int GetToken(unsigned short maxLength, unsigned short inLength, unsigned char buffer[])
 {
+    printf("SecurityAgent end point %s\n",GetEndPoint().c_str());  
     Core::IPCChannelClientType<Core::Void, false, true> channel(Core::NodeId(GetEndPoint().c_str()), 2048);
     int result = -1;
 
@@ -63,6 +64,8 @@ int GetToken(unsigned short maxLength, unsigned short inLength, unsigned char bu
         // Prepare the data we have to send....
         _tokenId->Clear();
         _tokenId->Parameters().Set(inLength, buffer);
+        
+        printf("SecurityAgent: Creating Token for %s\n", reinterpret_cast<const char*>(buffer));
 
         Core::ProxyType<Core::IIPC> message(Core::proxy_cast<Core::IIPC>(_tokenId));
         uint32_t error = channel.Invoke(message, IPC::CommunicationTimeOut);
