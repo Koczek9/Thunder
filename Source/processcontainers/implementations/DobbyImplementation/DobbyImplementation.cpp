@@ -64,7 +64,7 @@ namespace ProcessContainers {
     DobbyContainerAdministrator::DobbyContainerAdministrator()
         : BaseAdministrator()
     {
-        mIpcService = AI_IPC::createIpcService("unix:path=/var/run/dbus/system_bus_socket", "com.sky.dobby.processcontainers");
+        mIpcService = AI_IPC::createIpcService(DBUS_SYSTEM_ADDRESS, DBUS_SERVICE_NAME);
 
         if (!mIpcService)
         {

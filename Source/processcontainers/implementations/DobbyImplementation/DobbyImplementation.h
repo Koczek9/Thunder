@@ -33,6 +33,8 @@ namespace WPEFramework {
 namespace ProcessContainers {
 
     const string CONFIG_NAME = "/config.json";
+    const string DBUS_SYSTEM_ADDRESS = "unix:path=/var/run/dbus/system_bus_socket";
+    const string DBUS_SERVICE_NAME = "com.sky.dobby.processcontainers";
 
     using DobbyContainerMixins = CGroupContainerInfo<NetworkInfoUnimplemented<BaseRefCount<Lockable<IContainer>>>>;
 
