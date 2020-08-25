@@ -248,7 +248,7 @@ namespace ProcessContainers {
         std::list<int> emptyList;
 
         // construct the full command to run with all the arguments
-        std::string fullCommand = "/usr/bin/" + command;
+        std::string fullCommand = command;
         while (parameters.Next()) {
             fullCommand += " " + parameters.Current();
         }
