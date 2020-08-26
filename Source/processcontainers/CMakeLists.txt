@@ -125,8 +125,6 @@ elseif (PROCESSCONTAINERS_DOBBY)
                 # Dobby libraries
                 DobbyClientLib
                 IpcService
-                AppInfraCommon
-                AppInfraLogging
 
                 ${SYSTEMD_LIBRARIES}
                 )
@@ -136,8 +134,6 @@ elseif (PROCESSCONTAINERS_DOBBY)
                 # Dobby includes
                 $<TARGET_PROPERTY:DobbyClientLib,INTERFACE_INCLUDE_DIRECTORIES>
                 $<TARGET_PROPERTY:IpcService,INTERFACE_INCLUDE_DIRECTORIES>
-                $<TARGET_PROPERTY:AppInfraCommon,INTERFACE_INCLUDE_DIRECTORIES>
-                $<TARGET_PROPERTY:AppInfraLogging,INTERFACE_INCLUDE_DIRECTORIES>
                 ${DOBBY_INCLUDE_DIRS}
                 ${JSONCPP_INCLUDE_DIRS}
         )
